@@ -1,15 +1,13 @@
 <template>
-  <li class="gallery-image">
-    <a :href="`/${post.Slug}`" class="post-sneak">
+    <a :href="`/${post.Slug}`">
       <div class="main-info">
-        <h3>{{ post.Title }}</h3>
-        <p>{{ post.Category }}</p>
-        <p>{{ post.Intro }}</p>
-        <p><i class="fa-solid fa-calendar-days"></i> {{ published }}</p>
+        <h3 class="Title">{{ post.Title }}</h3>
+        <p class="Category">{{ post.Category }}</p>
+        <p class="Intro">{{ post.Intro }}</p>
+        <p class="published"><i class="fa-solid fa-calendar-days"></i> {{ published }}</p>
       </div>
-      <img :src="post.CoverURL" alt="cover" style="height: 60px">
+      <img :src="post.CoverURL" alt="cover" class="cover">
     </a>
-  </li>
 </template>
 
 <script lang="ts" setup>
@@ -24,32 +22,22 @@ const published = new Date(props.post.publishedAt).toLocaleDateString(
 
 <style lang="scss" scoped>
 .gallery-image {
-  width: 95%;
-  height: 20rem;
-  margin-left: 2.5%;
-  margin-top: 2.5%;
-  background-color: var(--body-darker);
-  transition: 250ms all;
-  scale: 1;
-  position: relative;
+  display: grid;
+  grid-template-columns: auto 25rem;
+  grid-template-rows: 100%;
+  grid-template-areas: 'main cover';
 
-  &:hover {
-    scale: 1;
-    background-color: var(--body-brighter);
-
-    .post-sneak {
-      img {
-        //scale: 1.2;
-        opacity: 1;
-        filter: blur(2px);
-      }
-    }
+  .main {
+    .Title {}
+    .Category {}
+    .Intro {}
+    .published {}
   }
 
-  &:active { scale: 0.9; }
-
-
+  .cover {
+    grid-area: cover;
+    height: 25rem;
+    width: 25rem;
+  }
 }
 </style>
-
-// Content
