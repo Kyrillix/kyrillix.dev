@@ -2,6 +2,7 @@
   <div class="posts">
     <ul id="list">
       <PostSneak
+          class="gallery-image"
           v-for="post in posts"
           :key="post.Title"
           :post="post"
@@ -34,6 +35,13 @@ const {data: posts} = await useAsyncData('posts', () =>
     list-style: none;
     display: flex;
     flex-direction: column-reverse;
+
+    &:hover {
+      .gallery-image:not(.gallery-image:hover) {
+        scale: 0.95;
+        opacity: 0.3;
+      }
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="gallery-image">
     <a :href="`/${post.Slug}`" class="post-sneak">
       <div class="main-info">
         <h3>{{ post.Title }}</h3>
@@ -7,7 +7,7 @@
         <p>{{ post.Intro }}</p>
         <p><i class="fa-solid fa-calendar-days"></i> {{ published }}</p>
       </div>
-      <img :src="post.CoverURL" alt="cover">
+      <img :src="post.CoverURL" alt="cover" style="height: 60px">
     </a>
   </li>
 </template>
@@ -23,30 +23,32 @@ const published = new Date(props.post.publishedAt).toLocaleDateString(
 </script>
 
 <style lang="scss" scoped>
-.post-sneak {
-  margin: 25px 25px 0;
-  padding: 0;
-  height: 200px;
+.gallery-image {
+  width: 95%;
+  height: 20rem;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
   background-color: var(--body-darker);
-  display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: 1;
-  grid-template-areas: "left right";
-  border-radius: 25px;
-  color: var(--text);
-  text-decoration: none;
-  justify-content: space-between;
+  transition: 250ms all;
+  scale: 1;
+  position: relative;
 
-  .main-info {
-    margin: 0;
+  &:hover {
+    scale: 1;
+    background-color: var(--body-brighter);
+
+    .post-sneak {
+      img {
+        //scale: 1.2;
+        opacity: 1;
+        filter: blur(2px);
+      }
+    }
   }
 
-  img {
-    height: 200px;
-    width: 200px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-  }
+  &:active { scale: 0.9; }
+
+
 }
 </style>
 
