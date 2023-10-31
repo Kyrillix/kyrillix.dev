@@ -23,6 +23,9 @@
   #static {
     grid-area: static;
     background-color: var(--body-darker);
+    position: sticky;
+    top: 0;
+    bottom: 0;
   }
 
   #dynamic {
