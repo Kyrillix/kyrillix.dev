@@ -8,7 +8,7 @@
       <nuxt-link class="logo" to="/">
         <p>Kyrillix.</p>
       </nuxt-link>
-      <img src="~/assets/img/grid.svg" alt="">
+      <i class="fa-solid fa-bars"/>
     </section>
     <ColorSwitch/>
     <div class="side">
@@ -19,8 +19,9 @@
 
 <style scoped lang="scss">
 #static {
-  background-image: linear-gradient(180deg, rgba(26, 26, 26, 0.95), transparent),
-  url("~/assets/img/main-background.webp");
+  background-image:
+      var(--shadow),
+      url("~/assets/img/main-background.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -43,11 +44,12 @@
         letter-spacing: 0.25rem;
       }
     }
-    img {
-      height: 50px;
-      margin-top: 1rem;
-      margin-right: 1rem;
+    .fa-bars {
+      font-size: 3rem;
+      margin-top: 2rem;
+      margin-right: 2rem;
       cursor: pointer;
+      transition: 250ms all;
     }
   }
   .side {

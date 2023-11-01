@@ -86,6 +86,8 @@ const categoryIcon = computed(() => {
   }
 
   .main-info {
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
     .Title {}
     #Category {}
     .Intro {}
