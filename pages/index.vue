@@ -25,13 +25,12 @@ const {data: posts} = await useAsyncData('posts', () =>
 
 <style lang="scss" scoped>
 .posts {
-  margin: 5%;
+  margin: 2.5rem;
   max-height: 50%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 25px;
+  gap: 2.5rem;
   transition: 60ms all;
-
 
   &:hover {
     .gallery-image:not(.gallery-image:hover) {
@@ -40,31 +39,6 @@ const {data: posts} = await useAsyncData('posts', () =>
     }
   }
 
-  .gallery-image {
-    width: 100%;
-    height: 25rem;
-    border-radius: 2.5rem;
-    transition: 250ms all;
-    background-color: var(--body-darker);
-    scale: 1;
-    position: relative;
-    display: grid;
-
-    &:hover {
-      scale: 1;
-      background-color: var(--body-brighter);
-
-      img {
-        // scale: 1.2;
-        opacity: 1;
-        filter: blur(2px);
-      }
-    }
-
-    &:active {
-      scale: 0.9;
-    }
-  }
 }
 </style>
 
