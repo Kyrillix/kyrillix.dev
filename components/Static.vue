@@ -45,7 +45,7 @@
   #header {
     grid-area: header;
     background-image: var(--shadow),
-    url("~/assets/img/background.webp");
+    url("../assets/img/background.webp"); // oder statt ".." "~/"
     background-size: cover;
     background-position: center;
 
