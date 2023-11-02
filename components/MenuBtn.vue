@@ -7,6 +7,12 @@
       <!-- Dropdown-Inhalt -->
       <ul>
         <li>
+          <nuxt-link to="/">
+            <i class="fa-solid fa-house" />
+            Home
+          </nuxt-link>
+        </li>
+        <li>
           <nuxt-link to="blog">
             <i class="fa-solid fa-blog" />
             Blog
