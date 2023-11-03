@@ -43,7 +43,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     aspect-ratio: 1/1;
-    width: 70%;
+    //width: 70%;
+    height: 70%;
+    max-height: 50%;
     //background-color: var(--body);
   }
 
