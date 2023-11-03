@@ -18,10 +18,10 @@ export default defineNuxtConfig({
     classSuffix: '-mode',
     storageKey: 'nuxt-color-mode'
   },
-  routeRules: {
-    // https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering
-    '/': { prerender: true },
-  },
+  // routeRules: {
+  //   // https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering
+  //   '/': { prerender: true },
+  // },
   app: {
     head: {
       title: 'kyrillix.dev',

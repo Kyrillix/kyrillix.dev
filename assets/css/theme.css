@@ -9,7 +9,12 @@ body {
   --cyan: #2FB5C7FF;
   --green: #4FC679FF;
 
-  --shadow: linear-gradient(180deg, rgba(248, 248, 248, 0.95), transparent);
+  --inv-body-brighter: #1a1e25;
+  --inv-body: #13161b;
+  --inv-body-darker: #101318;
+  --inv-text: #f8f8f8;
+
+  --shadow: linear-gradient(180deg, rgba(248, 248, 248, 0.95), transparent); /* old #F8F8F8F2 */
 
   --cf-orange-red: linear-gradient(90deg, rgba(255, 110, 72, 1) 0%, rgb(255, 75, 62) 100%);
   --cf-green-blue: linear-gradient(90deg, rgb(79, 198, 121) 0%, rgb(78, 186, 170) 100%);
@@ -33,7 +38,12 @@ body {
   --cyan: #2FB5C7FF;
   --green: #4FC679FF;
 
-  --shadow: linear-gradient(180deg, rgba(26, 26, 26, 0.95), transparent);
+  --inv-body-brighter: #ffffff;
+  --inv-body: #f8f8f8;
+  --inv-body-darker: #f1f1f1;
+  --inv-text: #13161b;
+
+  --shadow: linear-gradient(180deg, rgba(19, 22, 27, 0.95), transparent); /* old #1A1A1AF2 */
 
   --cf-orange-red: linear-gradient(90deg, rgba(255, 110, 72, 1) 0%, rgb(255, 75, 62) 100%);
   --cf-green-blue: linear-gradient(90deg, rgb(79, 198, 121) 0%, rgb(78, 186, 170) 100%);
