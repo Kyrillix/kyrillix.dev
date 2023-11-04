@@ -3,7 +3,7 @@
     <button>
       <i class="fas fa-bars" />
     </button>
-    <div v-if="isDropdownOpen" class="dropdown-menu">
+    <div v-if="isDropdownOpen" class="dropdown-menu" style="z-index: 5 !important">
       <!-- Dropdown-Inhalt -->
       <ul>
         <li>
@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 
 export default defineComponent({
   data() {
