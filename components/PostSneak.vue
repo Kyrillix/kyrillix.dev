@@ -57,7 +57,8 @@ const categoryIcon = computed(() => {
 <style lang="scss" scoped>
 .gallery-image {
   display: grid;
-  grid-template-columns: auto 25rem;
+  max-height: 25rem;
+  grid-template-columns: 1fr 25rem;
   grid-template-rows: 100%;
   grid-template-areas: 'main cover';
   overflow: hidden;
