@@ -9,10 +9,23 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-const {find} = useStrapi();
-const {data: posts} = await useAsyncData('posts', () =>
-    find<StrapiResponse<StrapiBase<Post>[]>>('posts/?sort[0]=id:desc'), {
+<script lang="ts" setup> // /?sort[0]=id:desc   oder    /?sort[0]=createdAt:desc
+// const {find} = useStrapi();
+// const {data: posts} = await useAsyncData('posts', () =>
+//     find<StrapiResponse<StrapiBase<Post>[]>>('posts'), {
+//   transform: (data: any) => {
+//     if (data.data) {
+//       return data.data.map((post: any) => post.attributes);
+//     } else {
+//       return null;
+//     }
+//   },
+// });
+const { find } = useStrapi();
+const sortQueryParam = '?sort=publishedAt:desc'; // Der Sortierparameter für absteigende Reihenfolge
+
+const { data: posts } = await useAsyncData('posts', () =>
+    find<StrapiResponse<StrapiBase<Post>[]>>(`posts${sortQueryParam}`), {
   transform: (data: any) => {
     if (data.data) {
       return data.data.map((post: any) => post.attributes);

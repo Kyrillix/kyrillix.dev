@@ -88,10 +88,10 @@
       margin-right: 1rem;
 
       &:hover {
-        box-shadow: var(--hover-cyan);
+        box-shadow: var(--hover-magenta);
 
         p {
-          color: var(--cyan);
+          color: var(--magenta);
         }
       }
     }
@@ -104,10 +104,10 @@
       margin-top: 0;
 
       &:hover {
-        box-shadow: var(--hover-green);
+        box-shadow: var(--hover-blue);
 
         p {
-          color: var(--green);
+          color: var(--blue);
         }
       }
     }
@@ -118,10 +118,10 @@
       margin-left: 1rem;
 
       &:hover {
-        box-shadow: var(--hover-orange);
+        box-shadow: var(--hover-lime);
 
         p {
-          color: var(--h2);
+          color: var(--lime);
         }
       }
     }

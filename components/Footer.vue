@@ -155,8 +155,8 @@
       }
 
       &:first-child {
-        color: var(--h2);
-        background: var(--cf-green-blue);
+        color: var(--orange);
+        background: var(--cf-orange-red);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 500;

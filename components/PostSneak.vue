@@ -1,11 +1,11 @@
 <template>
     <a :href="`/${post.Slug}`">
       <div class="main-info">
-        <h3 class="Title">{{ post.Title }}</h3>
-        <p id="Category" :class="categoryClass">
+        <h1 id="Category" :class="categoryClass">
           <i v-if="categoryIcon" :class="`fa-solid ${categoryIcon}`" />
           {{ post.Category }}
-        </p>
+        </h1>
+        <h3 class="Title">{{ post.Title }}</h3>
         <p class="Intro">{{ post.Intro }}</p>
         <p class="published"><i class="fa-solid fa-calendar-days" /> {{ published }}</p>
       </div>
@@ -86,24 +86,33 @@ const categoryIcon = computed(() => {
   }
 
   .main-info {
-    margin-top: 2.5rem;
-    margin-left: 2.5rem;
+    margin: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     .Title {}
-    #Category {}
+    #Category {
+      text-transform: uppercase;
+
+      i {
+        margin: 0 0.75rem 0 0;
+      }
+    }
     .Intro {}
     .published {}
 
     .blog {
-      color: red;
+      color: var(--orange);
     }
     .it {
-      color: blue;
+      color: var(--blue)
     }
     .photography {
-      color: green;
+      color: var(--green)
     }
     .webdev {
-      color: yellow;
+      color: var(--magenta)
     }
   }
 
