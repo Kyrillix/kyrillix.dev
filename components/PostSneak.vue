@@ -1,15 +1,17 @@
 <template>
-  <li>
-    <a :href="`/${post.Slug}`" class="post-sneak">
+    <a :href="`/${post.Slug}`">
       <div class="main-info">
-        <h3>{{ post.Title }}</h3>
-        <p>{{ post.Category }}</p>
-        <p>{{ post.Intro }}</p>
-        <p><i class="fa-solid fa-calendar-days"></i> {{ published }}</p>
+        <h1 id="Category" :class="categoryClass">
+          <i v-if="categoryIcon" :class="`fa-solid ${categoryIcon}`" />
+          {{ post.Category }}
+        </h1>
+        <h3 class="Title">{{ post.Title }}</h3>
+        <p class="Intro">{{ post.Intro }}</p>
+        <p class="published"><i class="fa-solid fa-calendar-days" /> {{ published }}</p>
       </div>
-      <img :src="post.CoverURL" alt="cover">
+<!--      <img :src="post.CoverURL" alt="cover" class="cover"/>-->
+      <span class="cover" :style="{ backgroundImage: `url(${post.CoverURL})` }"/>
     </a>
-  </li>
 </template>
 
 <script lang="ts" setup>
@@ -20,34 +22,131 @@ const props = defineProps<{
 const published = new Date(props.post.publishedAt).toLocaleDateString(
     'de-DE'
 );
+
+// Funktion zur Berechnung der Kategorie-Klasse basierend auf dem Textinhalt
+const categoryClass = computed(() => {
+  const categoryText = props.post.Category;
+  if (categoryText === 'Blog') {
+    return 'blog';
+  } else if (categoryText === 'IT') {
+    return 'it';
+  } else if (categoryText === 'WebDev') {
+    return 'webdev';
+  } else if (categoryText === 'Photography') {
+    return 'photography';
+  }
+  return ''; // Standardklasse, wenn keine Übereinstimmung gefunden wird
+});
+
+// Funktion zur Berechnung des Icons basierend auf der Kategorie
+const categoryIcon = computed(() => {
+  const categoryIconType = props.post.Category;
+  if (categoryIconType === 'Blog') {
+    return 'fa-blog';
+  } else if (categoryIconType === 'IT') {
+    return 'fa-server';
+  } else if (categoryIconType === 'WebDev') {
+    return 'fa-code';
+  } else if (categoryIconType === 'Photography') {
+    return 'fa-camera';
+  }
+  return ''; // Standard-Icon, wenn keine Übereinstimmung gefunden wird
+});
 </script>
 
 <style lang="scss" scoped>
-.post-sneak {
-  margin: 25px 25px 0;
-  padding: 0;
-  height: 200px;
-  background-color: var(--body-darker);
+.gallery-image {
   display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: 1;
-  grid-template-areas: "left right";
-  border-radius: 25px;
-  color: var(--text);
-  text-decoration: none;
-  justify-content: space-between;
+  max-height: 25rem;
+  grid-template-columns: 1fr 25rem;
+  grid-template-rows: 100%;
+  grid-template-areas: 'main cover';
+  overflow: hidden;
+  width: 100%;
+  border-radius: 2.5rem;
+  transition: 250ms all;
+  background-color: var(--body-darker);
+  scale: 1;
+  position: relative;
 
-  .main-info {
-    margin: 0;
+  &:active {
+    scale: 0.9;
   }
 
-  img {
-    height: 200px;
-    width: 200px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+  &:hover {
+    scale: 1;
+    background-color: var(--body-brighter);
+
+    .cover {
+      scale: 1.2;
+      opacity: 1;
+      transition: 250ms all;
+      filter: blur(0);
+      -webkit-filter: blur(0);
+    }
+  }
+
+  .main-info {
+    margin: 2.5rem;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: space-between;
+
+    #Category {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+
+      i {
+        margin: 0 0.5rem 0 0;
+        font-size: 1.4rem;
+      }
+    }
+
+    .Title {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .Intro {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .published {
+      font-weight: 600;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 2.5rem;
+      bottom: 2.5rem;
+
+      i {
+        font-size: 1.3rem;
+      }
+    }
+
+    .blog {
+      color: var(--orange);
+    }
+    .it {
+      color: var(--blue)
+    }
+    .photography {
+      color: var(--green)
+    }
+    .webdev {
+      color: var(--magenta)
+    }
+  }
+
+  .cover {
+    grid-area: cover;
+    height: 25rem;
+    width: 25rem;
+    background-size: cover;
+    background-position: center;
+    filter: blur(7.5px);
+    -webkit-filter: blur(7.5px);
   }
 }
 </style>
-
-// Content

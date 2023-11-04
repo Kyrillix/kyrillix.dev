@@ -21,8 +21,12 @@
   grid-template-areas: "static dynamic";
 
   #static {
+    height: 100vh;
     grid-area: static;
     background-color: var(--body-darker);
+    position: sticky;
+    top: 0;
+    bottom: 0;
   }
 
   #dynamic {

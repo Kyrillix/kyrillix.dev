@@ -18,16 +18,16 @@ export default defineNuxtConfig({
     classSuffix: '-mode',
     storageKey: 'nuxt-color-mode'
   },
-  routeRules: {
-    // https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering
-    '/': { prerender: true },
-  },
+  // routeRules: {
+  //   // https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering
+  //   '/': { prerender: true },
+  // },
   app: {
     head: {
       title: 'kyrillix.dev',
       link: [
         {rel: 'icon', href: '/favicon.ico'},
-        {rel: 'shortcut icon', href: '/favicon/favicon.ico', type: 'image/x-icon'},
+        {rel: 'shortcut icon', href: '/faviconOLD/favicon.ico', type: 'image/x-icon'},
         {rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png'},
         {rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png'},
         {rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png'},
