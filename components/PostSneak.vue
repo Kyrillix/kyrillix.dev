@@ -87,20 +87,42 @@ const categoryIcon = computed(() => {
 
   .main-info {
     margin: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: space-between;
 
-    .Title {}
     #Category {
       text-transform: uppercase;
+      font-size: 1.4rem;
 
       i {
-        margin: 0 0.75rem 0 0;
+        margin: 0 0.5rem 0 0;
+        font-size: 1.4rem;
       }
     }
-    .Intro {}
-    .published {}
+
+    .Title {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .Intro {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .published {
+      font-weight: 600;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 2.5rem;
+      bottom: 2.5rem;
+
+      i {
+        font-size: 1.3rem;
+      }
+    }
 
     .blog {
       color: var(--orange);
