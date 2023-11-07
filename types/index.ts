@@ -30,6 +30,7 @@ declare global {
         Title: string;
         Slug: string;
         Intro: string;
+        Author: string;
         Content: string;
         Category: string;
         CoverURL: string;
