@@ -8,6 +8,7 @@
       <div class="hero-top-left">
         <h1>Lorem ipsum dolor </h1>
         <h1>sit <span>amet</span>, consetetur</h1>
+        <h1>{{ $t('welcome') }}</h1>
       </div>
       <div class="hero-top-right">
         <i class="fa-solid fa-circle" style="font-size: 1rem;"/>

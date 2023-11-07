@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: {strict: true,},
-  strapi: {url: process.env.STRAPI_URL || 'https://api.shots-arw.de'},
+  strapi: {url: process.env.STRAPI_URL || 'https://api.kyrillix.dev'},
   plugins: ['./plugins/markdown.ts'],
   modules: [
     '@nuxtjs/color-mode',
